@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+
+* {
+  font-family: Roboto, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+.search {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+
+.search > form {
+  display: inline-block;
+  position: relative;
+  filter: drop-shadow(0 1px #0091c2);
+}
+
+/* .search > form:after {
+  content: "";
+  background: white;
+  width: 4px;
+  height: 10px;
+  position: absolute;
+  top: 40px;
+  bottom: 40px;
+  right: 2px;
+  transform: rotate(135deg);
+} */
+
+.search > form > input {
+  color: white;
+  font-size: 16px;
+  background: transparent;
+  width: 10px;
+  height: 10px;
+  padding: 10px;
+  border: solid 3px white;
+  outline: none;
+  border-radius: 35px;
+  transition: width 0.5s;
+}
+
+.search > form > input::placeholder {
+  color: #efefef;
+  opacity: 0;
+  transition: opacity 150ms ease-out;
+}
+
+.search > form > input:focus::placeholder {
+  opacity: 1;
+}
+
+.search > form > input:focus,
+.search > form > input:not(:placeholder-shown) {
+  width: 150px;
+}
