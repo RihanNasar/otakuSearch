@@ -94,6 +94,7 @@ const ResponsiveDrawer = () => {
       <div className={classes.upperdrawer}>
         <Link className={classes.links} to="/">
           <img
+            onClick={() => setOpen(false)}
             src={logo}
             style={{ width: 70, height: 70, borderRadius: 9999, marginTop: 20 }}
             alt="logo"
@@ -105,6 +106,7 @@ const ResponsiveDrawer = () => {
             size="large"
             variant="outlined"
             color="secondary"
+            onClick={() => setOpen(false)}
           >
             <Badge badgeContent={watchlist.length} {...defaultProps} />
           </Button>
@@ -172,7 +174,6 @@ const ResponsiveDrawer = () => {
           <Route path="/watchlist" component={WatchList} />
           <Route path="/search/:id" component={SearchPage} />
           <Route path="*" component={ErrorPage} />
-
           {status == false ? history.push("/error") : console.log("nothing")}
         </Switch>
       </main>

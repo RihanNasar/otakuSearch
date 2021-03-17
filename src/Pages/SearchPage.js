@@ -18,20 +18,26 @@ function SearchPage({ match }) {
   return (
     <div>
       <Typography variant="h4">{title}</Typography>
-      {loading ? (
-        <div className="main">
-          {animes.slice(0, 30).map((anime) => (
-            <Cards key={anime.mal_id} anime={anime} />
-          ))}
-        </div>
-      ) : (
-        <div>
-          <Skeleton animation="wave" variant="rect" width={350} height={350} />
-          <Skeleton animation="wave" variant="text" />
-          <Skeleton variant="text" />
-          <Skeleton variant="text" />
-        </div>
-      )}
+
+      <div className="main">
+        {loading ? (
+          animes
+            .slice(0, 30)
+            .map((anime) => <Cards key={anime.mal_id} anime={anime} />)
+        ) : (
+          <div>
+            <Skeleton
+              animation="wave"
+              variant="rect"
+              width={350}
+              height={350}
+            />
+            <Skeleton animation="wave" variant="text" />
+            <Skeleton variant="text" />
+            <Skeleton variant="text" />
+          </div>
+        )}
+      </div>
     </div>
   );
 }
